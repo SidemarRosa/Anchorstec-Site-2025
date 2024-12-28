@@ -364,7 +364,7 @@ button.main-button {
 }
 
 button.main-button:hover {
-  background-color: #ff589e;
+  background-color: #00ff80;
 }
 
 
@@ -448,7 +448,7 @@ header
 }
 
 .header-area .main-nav .nav li a:hover {
-  color: #ff589e;
+  color: #00aeff;
 }
 
 .header-area .main-nav .menu-trigger {
