@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Inter:100,300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900");
 /* 
 ---------------------------------------------
 reset
@@ -151,12 +151,12 @@ body {
 }
 
 ::selection {
-  background: #ff589e;
+  background: #00fff2;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #ff589e;
+  background: #00fff2;
   color: #fff;
 }
 
@@ -353,7 +353,7 @@ a.main-button-slider {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #ff589e;
+  background-color: #3abcc8;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.25px;
@@ -364,14 +364,15 @@ a.main-button-slider {
 }
 
 a.main-button-slider:hover {
-  background-color: #8261ee;
+  background-color: #3abcc8;
+  transform: scale(1.1);
 }
 
 a.main-button {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #8261ee;
+  background-color: #3abcc8;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.25px;
@@ -382,7 +383,8 @@ a.main-button {
 }
 
 a.main-button:hover {
-  background-color: #ff589e;
+  background-color: #3abcc8;
+  transform: scale(1.1);
 }
 
 button.main-button {
@@ -392,7 +394,7 @@ button.main-button {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #8261ee;
+  background-color: #3abcc8;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.25px;
@@ -403,7 +405,8 @@ button.main-button {
 }
 
 button.main-button:hover {
-  background-color: #00ff80;
+  background-color: #4e47de;
+  transform: scale(1.1);
 }
 
 /* 
@@ -598,7 +601,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-  color: #ff589e;
+  color: #3abcc8;
 }
 
 @media (max-width: 1200px) {
@@ -806,7 +809,7 @@ features
 }
 
 .features-small-item:hover .icon {
-  background-color: #ff589e;
+  background-color: #3abcc8;
 }
 
 .features-small-item .icon {
@@ -820,7 +823,7 @@ features
   margin: auto;
   position: relative;
   margin-bottom: 30px;
-  background: #8261ee;
+  background: #3abcc8;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1212,7 +1215,7 @@ team
   display: block;
   font-weight: 400;
   font-size: 15px;
-  color: #ff589e;
+  color: #3abcc8;
   letter-spacing: 0.25px;
 }
 
@@ -1251,7 +1254,7 @@ pricing
 }
 
 .pricing-item.active .pricing-body .price-wrapper {
-  background-color: #ff589e;
+  background-color: #3abcc8;
 }
 
 .pricing-item.active .pricing-body .price-wrapper .currency {
@@ -1388,7 +1391,7 @@ blog
 }
 
 .blog-post-thumb h3 a:hover {
-  color: #ff589e;
+  color: #3abcc8;
 }
 
 .blog-post-thumb .text {
@@ -1478,7 +1481,7 @@ footer
 --------------------------------------------- 
 */
 footer {
-  background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
+  background-image: linear-gradient(127deg, #3abcc8 0%, #1e4d5f 91%);
   padding-top: 30px;
 }
 
@@ -1494,7 +1497,7 @@ footer .social li {
 }
 
 footer .social li a {
-  color: #9d5bd9;
+  color: #00fff2;
   text-align: center;
   background-color: #fff;
   width: 36px;
@@ -1510,8 +1513,9 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #ff589e;
+  background-color: #3abcc8;
   color: #fff;
+  transform: scale(1.1);
 }
 
 footer .copyright {
@@ -1546,7 +1550,7 @@ preloader
 */
 #preloader {
   overflow: hidden;
-  background-image: linear-gradient(135deg, #a759d1 0%, #8261ee 100%);
+  background-image: linear-gradient(135deg, #fdfdfd 0%, #2d7c92 100%);
   left: 0;
   right: 0;
   top: 0;
