@@ -823,7 +823,7 @@ features
   margin: auto;
   position: relative;
   margin-bottom: 30px;
-  background: #3abcc8;
+  background: #4e47de;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1497,7 +1497,7 @@ footer .social li {
 }
 
 footer .social li a {
-  color: #00fff2;
+  color: #4e47de;
   text-align: center;
   background-color: #fff;
   width: 36px;
