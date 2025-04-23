@@ -6,7 +6,7 @@
     <meta name="description" content="Anchorstec - Soluções em tecnologia, criação de sites, desenvolvimento de sistemas, lojas virtuais e landing pages." />
     <meta name="author" content="Anchorstec" />
     <meta name="keywords" content="tecnologia, criação de sites, desenvolvimento de sistemas, lojas virtuais, landing pages, SEO, marketing digital" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:wght@200..700&display=swap" rel="stylesheet"/>
     <style>
       .whatsapp-float {
         position: fixed;
@@ -22,10 +22,56 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-    <link rel="icon" type="image/png" href="assets/images/Favicon.png" />
+    <link rel="icon" type="image/png" href="assets/images/favicon/Design_sem_nome__12_-removebg-preview.png" />
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- FontAwesome para ícones -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8b+4g5e5a5e5a5e5a5e5a5e5a5e5a5e5a5e" crossorigin="anonymous" />   
+    <style>
+      .esteira-servicos {
+        overflow: hidden;
+        background-color: #111827;
+        padding: 2rem 0;
+      }
+
+      .esteira-wrapper {
+        display: flex;
+        width: 200%;
+        animation: scrollEsteira 40s linear infinite;
+      }
+
+      .esteira-itens {
+        display: flex;
+        gap: 2rem;
+        flex-shrink: 0;
+      }
+
+      .servico-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #1f2937;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        white-space: nowrap;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .servico-card i {
+        font-size: 2.5rem;
+        color: #38bdf8;
+      }
+
+      @keyframes scrollEsteira {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
   </head>
 
   <body>
@@ -59,7 +105,7 @@
                 <li><a href="#welcome" class="active">Inicio</a></li>
                 <li><a href="#features">Sobre</a></li>
                 <li><a href="#work-process">Desenvolvimentos</a></li>
-                <li><a href="#pricing-plans">Preços</a></li>
+                <!-- <li><a href="#pricing-plans">Preços</a></li> -->
                 <li><a href="#contact-us">Fale conosco</a></li>
               </ul>
               <!-- ***** Menu End ***** -->
@@ -136,9 +182,9 @@
           >
           <div class="features-small-item">
             <div class="icon">
-            <i class="fas fa-robot"></i>
+            <i class="fas fa-brain"></i>
             </div>
-            <h5 class="features-title">ChatBot IA</h5>
+            <h5 class="features-title">ChatBot Com IA</h5>
             <p>
             Desenvolvemos ChatBots para WhatsApp utilizando Inteligência
             Artificial para automatizar o atendimento ao cliente,
@@ -158,9 +204,9 @@
             <div class="icon">
             <i class="fas fa-bullhorn"></i>
             </div>
-            <h5 class="features-title">Marketing eficiente</h5>
+            <h5 class="features-title">Marketing Digital</h5>
             <p>
-            Oferecemos serviços de marketing digital e anúncios
+            Oferecemos serviços de marketing digital, campanhas e anúncios
             eficientes para aumentar a visibilidade e o alcance da sua
             marca, utilizando estratégias personalizadas e ferramentas
             avançadas para garantir os melhores resultados.
@@ -215,6 +261,39 @@
       </div>
     </section>
     <!-- ***** Features Big Item End ***** -->
+    <div class="esteira-servicos">
+      <div class="esteira-wrapper">
+        <div class="esteira-itens">
+          <!-- Cards duplicados para efeito de loop infinito -->
+          <div class="servico-card"><i class="fas fa-laptop-code"></i><span>Criação de Sites</span></div>
+          <div class="servico-card"><i class="fas fa-shopping-cart"></i><span>E-commerce</span></div>
+          <div class="servico-card"><i class="fas fa-cogs"></i><span>ERP Personalizado</span></div>
+          <div class="servico-card"><i class="fas fa-users"></i><span>CRM Gestão de relacionamento</span></div>
+          <div class="servico-card"><i class="fas fa-warehouse"></i><span>Sistema de Estoque</span></div>
+          <div class="servico-card"><i class="fas fa-comments"></i><span> Chatbot Com IA</span></div>
+          <div class="servico-card"><i class="fas fa-ad"></i><span>Tráfego Pago (ADS)</span></div>
+          <div class="servico-card"><i class="fas fa-clipboard-list"></i><span>Funil de Vendas</span></div>
+          <div class="servico-card"><i class="fas fa-whatsapp"></i><span>API WhatsApp</span></div>
+          <div class="servico-card"><i class="fas fa-calendar-check"></i><span>Agendamento Online</span></div>
+          <div class="servico-card"><i class="fas fa-chart-line"></i><span>Dashboard</span></div>
+          <div class="servico-card"><i class="fas fa-credit-card"></i><span>Pagamentos Online</span></div>
+    
+          <!-- Duplicando os mesmos cards para loop contínuo -->
+          <div class="servico-card"><i class="fas fa-laptop-code"></i><span>Criação de Sites</span></div>
+          <div class="servico-card"><i class="fas fa-shopping-cart"></i><span>E-commerce</span></div>
+          <div class="servico-card"><i class="fas fa-cogs"></i><span>ERP Personalizado</span></div>
+          <div class="servico-card"><i class="fas fa-users"></i><span>CRM Gestão de relacionamento </span></div>
+          <div class="servico-card"><i class="fas fa-warehouse"></i><span>Sistema de Estoque</span></div>
+          <div class="servico-card"><i class="fas fa-comments"></i><span>Chatbot Com IA</span></div>
+          <div class="servico-card"><i class="fas fa-ad"></i><span>Tráfego Pago (ADS)</span></div>
+          <div class="servico-card"><i class="fas fa-clipboard-list"></i><span>Funil de Vendas</span></div>
+          <div class="servico-card"><i class="fas fa-whatsapp"></i><span>API WhatsApp</span></div>
+          <div class="servico-card"><i class="fas fa-calendar-check"></i><span>Agendamento Online</span></div>
+          <div class="servico-card"><i class="fas fa-chart-line"></i><span>Dashboard</span></div>
+          <div class="servico-card"><i class="fas fa-credit-card"></i><span>Pagamentos Online</span></div>
+        </div>
+      </div>
+    </div>
 
     <!-- ***** Features Big Item Start ***** -->
     <section class="section padding-bottom-100">
@@ -251,215 +330,8 @@
         </div>
       </div>
     </section>
-    <!-- ***** Features Big Item End ***** -->
-    <section class="mini" id="work-process">
-      <div class="mini-content">
-        <div class="container">
-          <div class="row">
-            <div class="offset-lg-3 col-lg-6">
-              <div class="info">
-                <h1>Otimizações para elevar o seu site</h1>
-                <p>
-                  A criação de um site profissional passa por diversas etapas
-                  essenciais para garantir que ele seja responsivo, otimizado e
-                  fácil de gerenciar.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- ***** Mini Box Start ***** -->
-          <div class="row">
-            <!-- Etapa 1 - Site Responsivo -->
-            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-              <a href="#" class="mini-box">
-                <i class="fas fa-mobile-alt"></i>
-                <strong>Site Responsivo</strong>
-                <span>Seu site preparado para dispositivos móveis.</span>
-              </a>
-            </div>
-
-            <!-- Etapa 2 - Otimização e SEO -->
-            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-              <a href="#" class="mini-box">
-                <i class="fas fa-search"></i>
-                <strong>Otimização e SEO</strong>
-                <span>Otimização do seu site para ranquear melhor nas buscas.</span>
-              </a>
-            </div>
-            <!-- Etapa 3 - Suporte Técnico -->
-            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-              <a href="#" class="mini-box">
-              <i class="fas fa-headset"></i>
-              <strong>Suporte Técnico</strong>
-              <span>Assistência técnica especializada para seu site.</span>
-              </a>
-            </div>
-
-            <!-- Etapa 5 - Exclusividade -->
-            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-              <a href="#" class="mini-box">
-                <i class="fas fa-star"></i>
-                <strong>Exclusividade</strong>
-                <span>Design, key visual e programação exclusivos.</span>
-              </a>
-            </div>
-
-            <!-- Etapa 6 - User Interface (UI) -->
-            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-              <a href="#" class="mini-box">
-                <i class="fas fa-desktop"></i>
-                <strong>User Interface (UI)</strong>
-                <span>Design de interface amigável e fácil de navegar.</span>
-              </a>
-            </div>
-
-            <!-- Etapa 7 - User Experience (UX) -->
-            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-              <a href="#" class="mini-box">
-                <i class="fas fa-users"></i>
-                <strong>User Experience (UX)</strong>
-                <span>Técnicas focadas na experiência do usuário.</span>
-              </a>
-            </div>
-          </div>
-          <!-- ***** Mini Box End ***** -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** Pricing Plans Start ***** -->
-    <section class="section colored" id="pricing-plans">
-      <div class="container">
-        <!-- ***** Section Title Start ***** -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="center-heading">
-              <h2 class="section-title">Planos de Preços</h2>
-            </div>
-          </div>
-          <div class="offset-lg-3 col-lg-6">
-            <div class="center-text">
-              <p>
-                Escolha o plano perfeito para o seu site, chatbot ou loja
-                virtual. Seja você iniciante ou esteja em expansão, temos um
-                plano que atende às suas necessidades. Confira nossos planos
-                iniciais
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- ***** Section Title End ***** -->
-
-        <div class="row">
-          <!-- ***** Site Plan Start ***** -->
-          <div
-            class="col-lg-4 col-md-6 col-sm-12"
-            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s"
-          >
-            <div class="pricing-item">
-              <div class="pricing-header">
-              <h3 class="pricing-title">Site de vendas</h3>
-              </div>
-              <div class="pricing-body">
-              <div class="price-wrapper">
-                <span class="currency">R$</span>
-                <span class="price">289,00</span>
-                <span class="period">mensal</span>
-              </div>
-              <ul class="list">
-                <li class="active">1 Site de vendas (Landing Page)</li>
-                <li class="active">Até 5 Sections</li>
-                <li class="active">Design responsivo</li>
-                <li class="active">Otimização SEO básica</li>
-                <li class="active">Suporte horário comercial</li>
-                <li class="active">Recursos de segurança básicos</li>
-              </ul>
-              </div>
-              <div class="pricing-footer">
-              <button
-              onclick="window.open('https://wa.me/5551997838841', '_blank')"
-              class="main-button mb-4 scale-hover"
-              >Comprar Agora</button>
-              </div>
-            </div>
-          </div>
-          <!-- ***** Site Plan End ***** -->
-
-          <!-- ***** E-commerce NuvemShop Plan Start ***** -->
-          <div
-            class="col-lg-4 col-md-6 col-sm-12"
-            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s"
-          >
-            <div class="pricing-item active">
-              <div class="pricing-header">
-              <h3 class="pricing-title">E-commerce</h3>
-              </div>
-              <div class="pricing-body">
-              <div class="price-wrapper">
-                <span class="currency">R$</span>
-                <span class="price">199,00</span>
-                <span class="period">mensal</span>
-              </div>
-              <ul class="list">
-                <li class="active">1 loja virtual + Banners Basicos</li>
-                <li class="active">Até 50 produtos</li>
-                <li class="active">Design responsivo para mobile</li>
-                <li class="active">Otimização SEO básica</li>
-                <li class="active">Gerenciamento de inventário</li>
-                <li class="active">Suporte horário comercial</li>
-                <li class="active">Recursos de segurança básicos</li>
-              </ul>
-              </div>
-              <div class="pricing-footer">
-              <button
-              onclick="window.open('https://wa.me/5551997838841', '_blank')"
-              class="main-button mb-4 scale-hover"
-              >Comprar Agora</button>
-              </div>
-            </div>
-          </div>
-          <!-- ***** E-commerce NuvemShop Plan End ***** -->
-
-          <!-- ***** Chatbot WhatsApp Plan Start ***** -->
-          <div
-            class="col-lg-4 col-md-6 col-sm-12"
-            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s"
-          >
-            <div class="pricing-item">
-              <div class="pricing-header">
-                <h3 class="pricing-title">Chatbot basic</h3>
-              </div>
-              <div class="pricing-body">
-                <div class="price-wrapper">
-                  <span class="currency">R$</span>
-                  <span class="price">59,90</span>
-                  <span class="period">mensal</span>
-                </div>
-                <ul class="list">
-                  <li class="active">Recursos básicos do chatbot para whatsapp</li>
-                  <li class="active">Respostas automáticas</li>
-                  <li class="active">Interações Ilimitadas</li>
-                  <li class="active">Suporte para FAQs</li>
-                  <li class="active">Integrações básicas</li>
-                  <li class="active">Suporte horário comercial</li>
-                  <li class="active">Prompt personalizado para seu negócio</li>
-                </ul>
-              </div>
-                <div class="pricing-footer">
-                <button
-                onclick="window.open('https://pay.kiwify.com.br/0fnI3fS', '_blank')"
-                class="main-button mb-4 scale-hover"
-                >Comprar Agora</button>
-                </div>
-            </div>
-          </div>
-          <!-- ***** Chatbot WhatsApp Plan End ***** -->
-        </div>
-      </div>
-    </section>
-    <!-- ***** Pricing Plans End ***** -->
-
+   
+    
     <!-- ***** Counter Parallax Start ***** -->
     <section class="counter">
       <div class="content">
@@ -467,13 +339,13 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="count-item decoration-bottom">
-                <strong>270</strong>
+                <strong>90</strong>
                 <span>Projetos concluidos</span>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="count-item decoration-top">
-                <strong> 130 </strong>
+                <strong> +50 </strong>
                 <span>Clientes satisfeitos</span>
               </div>
             </div>
@@ -495,107 +367,32 @@
     </section>
     <!-- ***** Counter Parallax End ***** -->
 
-    <!-- ***** Contact Us Start ***** -->
-    <section class="section colored" id="contact-us">
-      <div class="container">
-        <!-- ***** Section Title Start ***** -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="center-heading">
-              <h2 class="section-title">Fale conosco</h2>
-            </div>
-          </div>
-          <div class="offset-lg-3 col-lg-6">
-            <div class="center-text">
-              <p>
-                Envie uma mensagem para nós e entraremos em contato o mais breve
-                possível.
-              </p>
-            </div>
-          </div>
+    <section id="contato" class="contact fade-in" style="padding: 6rem 2rem; background-color: #151723;">
+      <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto;">
+    
+        <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">Fale conosco</h2>
+          <p style="font-size: 1.1rem; line-height: 1.6; color: #ddd; margin-bottom: 1rem; max-width: 500px;">
+            Av. Sen. Salgado Filho, 204<br>
+            Bairro Centro, Porto Alegre, RS<br>
+            CEP 12345-678, Brasil
+          </p>
+          <p style="font-size: 1.1rem; line-height: 1.6; color: #ddd; margin-bottom: 2rem;">
+            <strong>Telefone:</strong> +55 51 99783-8841<br>
+            <strong>Email:</strong> comercial@anchorstec.com
+          </p>
+            <a href="https://wa.me/5551997838841?text=Olá,%20gostaria%20de%20mais%20informações!" target="_blank">
+            <button class="main-button mb-4 scale-hover">Pedir orçamento</button>
+            </a>
         </div>
-        <!-- ***** Section Title End ***** -->
-
-        <div class="row">
-          <!-- ***** Contact Text Start ***** -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <h5 class="margin-bottom-30">Mantenha contato</h5>
-            <div class="contact-text">
-              <p>
-                Av. Sen. Salgado filho, 204, Bairro Centro, Porto Alegre, CEP
-                12345-678
-                <br />RS, Brasil.
-              </p>
-              <p>
-                <strong>Telefone:</strong> +55 51 997838841
-                <br />
-                <strong>Email:</strong> comercial@anchorstec.com
-              </p>
-            </div>
-          </div>
-          <!-- ***** Contact Text End ***** -->
-
-          <!-- ***** Contact Form Start ***** -->
-          <div class="col-lg-8 col-md-6 col-sm-12">
-            <div class="contact-form">
-              <form id="contact" action="process_form.php" method="post">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input
-                        name="name"
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="Nome completo"
-                        required=""
-                      />
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input
-                        name="email"
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="E-Mail"
-                        required=""
-                      />
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea
-                        name="message"
-                        rows="6"
-                        class="form-control"
-                        id="message"
-                        placeholder="Mensagem"
-                        required=""
-                      ></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button
-                        type="submit"
-                        id="form-submit"
-                        class="main-button"
-                      >
-                        Enviar
-                      </button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <!-- ***** Contact Form End ***** -->
+    
+        <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
+          <img src="assets/images/creator.png" alt="Contato WhatsApp" style="width: 100%; max-width: 400px; border-radius: 16px;" />
         </div>
+    
       </div>
     </section>
-    <!-- ***** Contact Us End ***** -->
+    
 
     <!-- ***** Footer Start ***** -->
     <footer>
@@ -610,7 +407,7 @@
                 <a href="https://www.facebook.com/profile.php?id=61560835333348" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 </li>
                 <li>
-                <a href="https://instagram.com/anchorstec" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/anchors.sites/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </li>
                 <li>
                 <a href="https://wa.me/5551997838841" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
@@ -637,7 +434,7 @@
         <div class="row">
           <div class="col-lg-12">
             <p class="copyright">
-              Copyright &copy; 2023-2024 Anchorstec soluções em tecnologia.
+              Copyright &copy; 2024 - 2025 Anchorstec soluções em tecnologia.
             </p>
           </div>
         </div>

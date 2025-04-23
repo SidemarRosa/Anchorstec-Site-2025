@@ -894,10 +894,7 @@ parallax & home seperator
   width: 140%;
   height: 140%;
   opacity: 0.95;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-image: url(../images/work-process-bg.png);
+  background-color: #151723;
   z-index: 2;
   top: -20%;
   left: -20%;
@@ -1478,18 +1475,17 @@ footer
 --------------------------------------------- 
 */
 footer {
-  background-image: linear-gradient(127deg, #3abcc8 0%, #1e4d5f 91%);
-  padding-top: 30px;
+  background-color: #151723;
+  padding-top: 10px;
 }
 
 footer .social {
-  overflow: hidden;
   margin-top: 10px;
   text-align: center;
 }
 
 footer .social li {
-  margin: 0px 10px;
+  margin: 0px 20px;
   display: inline-block;
 }
 
@@ -1512,7 +1508,7 @@ footer .social li a {
 footer .social li a:hover {
   background-color: #3abcc8;
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 footer .copyright {
