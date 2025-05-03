@@ -1,460 +1,858 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Anchorstec - Soluções em tecnologia, criação de sites, desenvolvimento de sistemas, lojas virtuais e landing pages." />
-    <meta name="author" content="Anchorstec" />
-    <meta name="keywords" content="tecnologia, criação de sites, desenvolvimento de sistemas, lojas virtuais, landing pages, SEO, marketing digital" />
-    <link href="https://fonts.googleapis.com/css?family=Oswald:wght@200..700&display=swap" rel="stylesheet"/>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/images/favicon/Favicon.ico" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnchorsTec | Soluções em Cloud, Infraestrutura e Transformação Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7j3z5l5e5c5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+
     <style>
-      .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 100;
-        width: 75px;
-        height: 75px;
-      }
+        :root {
+            --primary: #0056b3;
+            --secondary: #00a3e0;
+            --accent: #ff6b00;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover span{
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--accent);
+            color: white !important;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #e05e00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0,86,179,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .service-icon svg {
+            color: var(--primary);
+            width: 35px;
+            height: 35px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        /* Clients Section */
+        .clients {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .client-logo {
+            flex: 0 0 170px;
+            margin: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,86,179,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .contact-icon svg {
+            color: var(--primary);
+            width: 20px;
+            height: 20px;
+        }
+        
+        .contact-detail h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .contact-detail p {
+            color: var(--gray);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-menu {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-item {
+                margin: 10px 15px;
+            }
+            
+            .hero {
+                padding: 130px 0 80px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .client-logo {
+                flex: 0 0 140px;
+            }
+        }
     </style>
-
-    <title>Anchorstec - Soluções em tecnologia</title>
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-    <link rel="icon" type="image/png" href="assets/images/favicon/Design_sem_nome__12_-removebg-preview.png" />
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- FontAwesome para ícones -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8b+4g5e5a5e5a5e5a5e5a5e5a5e5a5e5a5e" crossorigin="anonymous" />   
-    <style>
-      .esteira-servicos {
-        overflow: hidden;
-        background-color: #111827;
-        padding: 2rem 0;
-      }
-
-      .esteira-wrapper {
-        display: flex;
-        width: 200%;
-        animation: scrollEsteira 40s linear infinite;
-      }
-
-      .esteira-itens {
-        display: flex;
-        gap: 2rem;
-        flex-shrink: 0;
-      }
-
-      .servico-card {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        background: #1f2937;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 0.5rem;
-        white-space: nowrap;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      .servico-card i {
-        font-size: 2.5rem;
-        color: #38bdf8;
-      }
-
-      @keyframes scrollEsteira {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-      <div class="jumper">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
-
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav class="main-nav">
-              <!-- ***** Logo Start ***** -->
-              <a href="#welcome" class="logo">
-                <img
-                  src="assets/images/logo.png"
-                  alt="Anchorstec"
-                  class="m-0"
-                />
-              </a>
-              <!-- ***** Logo End ***** -->
-              <!-- ***** Menu Start ***** -->
-              <ul class="nav">
-                <li><a href="#welcome" class="active">Inicio</a></li>
-                <li><a href="#features">Sobre</a></li>
-                <li><a href="#work-process">Desenvolvimentos</a></li>
-                <!-- <li><a href="#pricing-plans">Preços</a></li> -->
-                <li><a href="#contact-us">Fale conosco</a></li>
-              </ul>
-              <!-- ***** Menu End ***** -->
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-
-    <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area" id="welcome">
-      <!-- ***** Header Text Start ***** -->
-      <div class="header-text">
-        <div class="container">
-          <div class="row">
-            <div
-              class="offset-xl-3 col-xl-6 offset-lg-6 col-lg-8 col-md-12 col-sm-12"
-            >
-              <h1>
-                Criação de <strong> Sites</strong><br />Desenvolvimento de
-                <strong>Sistemas</strong>
-              </h1>
-              <p>
-                Criamos e personalizamos do zero, sites, sistemas, lojas
-                virtuais e landing pages customizadas para ações estratégicas da
-                sua empresa!
-              </p>
-
-                <button
-                onclick="window.location.href='https://wa.me/5551997838841'"
-                class="main-button mb-4 scale-hover"
-                >Pedir orçamento</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ***** Header Text End ***** -->
-    </div>
-    <br />
-    <br />
-    <br />
-    <!-- ***** Welcome Area End ***** -->
-
-    <!-- ***** Features Small Start ***** -->
-    <section class="section home-feature">
-      <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-        <div class="row">
-          <!-- ***** Features Small Item Start ***** -->
-          <div
-          class="col-lg-4 col-md-6 col-sm-6 col-12"
-          data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s"
-          >
-          <div class="features-small-item">
-            <div class="icon">
-            <i class="fas fa-laptop-code"></i>
-            </div>
-            <h5 class="features-title">Desenvolvimento de sites</h5>
-            <p>
-            Desenvolvimento de sites e ecommerces personalizados para
-            atender às necessidades específicas do seu negócio.
-            Nosso objetivo é proporcionar uma experiência intuitiva e agradável, aumentando a satisfação do usúario.
-            </p>
-          </div>
-          </div>
-          <!-- ***** Features Small Item End ***** -->
-
-          <!-- ***** Features Small Item Start ***** -->
-          <div
-          class="col-lg-4 col-md-6 col-sm-6 col-12"
-          data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s"
-          >
-          <div class="features-small-item">
-            <div class="icon">
-            <i class="fas fa-brain"></i>
-            </div>
-            <h5 class="features-title">ChatBot Com IA</h5>
-            <p>
-            Desenvolvemos ChatBots para WhatsApp utilizando Inteligência
-            Artificial para automatizar o atendimento ao cliente,
-            responder perguntas frequentes e melhorar a eficiência do
-            seu negócio. Em breve no nosso catalogo!
-            </p>
-          </div>
-          </div>
-          <!-- ***** Features Small Item End ***** -->
-
-          <!-- ***** Features Small Item Start ***** -->
-          <div
-          class="col-lg-4 col-md-6 col-sm-6 col-12"
-          data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s"
-          >
-          <div class="features-small-item">
-            <div class="icon">
-            <i class="fas fa-bullhorn"></i>
-            </div>
-            <h5 class="features-title">Marketing Digital</h5>
-            <p>
-            Oferecemos serviços de marketing digital, campanhas e anúncios
-            eficientes para aumentar a visibilidade e o alcance da sua
-            marca, utilizando estratégias personalizadas e ferramentas
-            avançadas para garantir os melhores resultados.
-            </p>
-          </div>
-          </div>
-          <!-- ***** Features Small Item End ***** -->
-        </div>
-        </div>
-      </div>
-      </div>
-    </section>
-    <!-- ***** Features Small End ***** -->
-
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section padding-top-70 padding-bottom-0" id="features">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-5 col-md-12 col-sm-12 align-self-center"
-            data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
-          >
-            <img
-              src="assets/images/left-image.png"
-              class="rounded img-fluid d-block mx-auto"
-              alt="App"
-            />
-          </div>
-          <div class="col-lg-1"></div>
-          <div
-            class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix"
-          >
-            <div class="left-heading">
-              <h2 class="section-title">Vamos dar vida ao seu projeto!</h2>
-            </div>
-            <div class="left-text">
-              <p>
-                Vamos ajudá-lo a dar o pontapé inicial na criação do seu site e
-                estabelecer uma presença online sólida e consistente para a sua
-                empresa. Com nossa expertise em desenvolvimento web, garantimos
-                que seu site será visualmente atraente, funcional e otimizado
-                para alcançar seus objetivos de negócios.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="hr"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Features Big Item End ***** -->
-    <div class="esteira-servicos">
-      <div class="esteira-wrapper">
-        <div class="esteira-itens">
-          <!-- Cards duplicados para efeito de loop infinito -->
-          <div class="servico-card"><i class="fas fa-laptop-code"></i><span>Criação de Sites</span></div>
-          <div class="servico-card"><i class="fas fa-shopping-cart"></i><span>E-commerce</span></div>
-          <div class="servico-card"><i class="fas fa-cogs"></i><span>ERP Personalizado</span></div>
-          <div class="servico-card"><i class="fas fa-users"></i><span>CRM Gestão de relacionamento</span></div>
-          <div class="servico-card"><i class="fas fa-warehouse"></i><span>Sistema de Estoque</span></div>
-          <div class="servico-card"><i class="fas fa-comments"></i><span> Chatbot Com IA</span></div>
-          <div class="servico-card"><i class="fas fa-ad"></i><span>Tráfego Pago (ADS)</span></div>
-          <div class="servico-card"><i class="fas fa-clipboard-list"></i><span>Funil de Vendas</span></div>
-          <div class="servico-card"><i class="fas fa-whatsapp"></i><span>API WhatsApp</span></div>
-          <div class="servico-card"><i class="fas fa-calendar-check"></i><span>Agendamento Online</span></div>
-          <div class="servico-card"><i class="fas fa-chart-line"></i><span>Dashboard</span></div>
-          <div class="servico-card"><i class="fas fa-credit-card"></i><span>Pagamentos Online</span></div>
-    
-          <!-- Duplicando os mesmos cards para loop contínuo -->
-          <div class="servico-card"><i class="fas fa-laptop-code"></i><span>Criação de Sites</span></div>
-          <div class="servico-card"><i class="fas fa-shopping-cart"></i><span>E-commerce</span></div>
-          <div class="servico-card"><i class="fas fa-cogs"></i><span>ERP Personalizado</span></div>
-          <div class="servico-card"><i class="fas fa-users"></i><span>CRM Gestão de relacionamento </span></div>
-          <div class="servico-card"><i class="fas fa-warehouse"></i><span>Sistema de Estoque</span></div>
-          <div class="servico-card"><i class="fas fa-comments"></i><span>Chatbot Com IA</span></div>
-          <div class="servico-card"><i class="fas fa-ad"></i><span>Tráfego Pago (ADS)</span></div>
-          <div class="servico-card"><i class="fas fa-clipboard-list"></i><span>Funil de Vendas</span></div>
-          <div class="servico-card"><i class="fas fa-whatsapp"></i><span>API WhatsApp</span></div>
-          <div class="servico-card"><i class="fas fa-calendar-check"></i><span>Agendamento Online</span></div>
-          <div class="servico-card"><i class="fas fa-chart-line"></i><span>Dashboard</span></div>
-          <div class="servico-card"><i class="fas fa-credit-card"></i><span>Pagamentos Online</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section padding-bottom-100">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix"
-          >
-            <div class="left-heading">
-              <h2 class="section-title">
-                Alcance mais pessoas com o seu negócio na internet!
-              </h2>
-            </div>
-            <div class="left-text">
-              <p>
-                Aumente a visibilidade do seu negócio e conquiste novos clientes
-                com uma presença online forte e eficaz. Desenvolvemos sites
-                otimizados para SEO, responsivos e com design exclusivo para
-                destacar sua marca na internet.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-1"></div>
-          <div
-            class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big"
-            data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
-          >
-            <img
-              src="assets/images/right-image.png"
-              class="rounded img-fluid d-block mx-auto"
-              alt="App"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-   
-    
-    <!-- ***** Counter Parallax Start ***** -->
-    <section class="counter">
-      <div class="content">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="count-item decoration-bottom">
-                <strong>90</strong>
-                <span>Projetos concluidos</span>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="count-item decoration-top">
-                <strong> +50 </strong>
-                <span>Clientes satisfeitos</span>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="count-item decoration-bottom">
-                <strong>392.000</strong>
-                <span>Mil linhas de codigos escritas</span>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="count-item">
-                <strong>3438</strong>
-                <span>Litros de café consumidos</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Counter Parallax End ***** -->
-
-    <section id="contato" class="contact fade-in" style="padding: 6rem 2rem; background-color: #151723;">
-      <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto;">
-    
-        <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">Fale conosco</h2>
-          <p style="font-size: 1.1rem; line-height: 1.6; color: #ddd; margin-bottom: 1rem; max-width: 500px;">
-            Av. Sen. Salgado Filho, 204<br>
-            Bairro Centro, Porto Alegre, RS<br>
-            CEP 12345-678, Brasil
-          </p>
-          <p style="font-size: 1.1rem; line-height: 1.6; color: #ddd; margin-bottom: 2rem;">
-            <strong>Telefone:</strong> +55 51 99783-8841<br>
-            <strong>Email:</strong> comercial@anchorstec.com
-          </p>
-            <a href="https://wa.me/5551997838841?text=Olá,%20gostaria%20de%20mais%20informações!" target="_blank">
-            <button class="main-button mb-4 scale-hover">Pedir orçamento</button>
-            </a>
-        </div>
-    
-        <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-          <img src="assets/images/creator.png" alt="Contato WhatsApp" style="width: 100%; max-width: 400px; border-radius: 16px;" />
-        </div>
-    
-      </div>
-    </section>
-    
-
-    <!-- ***** Footer Start ***** -->
-    <footer>
-      <div class="container">
-        <div class="row height: 150px">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <ul class="social">
-              <li>
-                <a href="#welcome"><i class="fa fa-home"></i></a>
-              </li>
-                <li>
-                <a href="https://www.facebook.com/profile.php?id=61560835333348" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-                <li>
-                <a href="https://www.instagram.com/anchors.sites/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                </li>
-                <li>
-                <a href="https://wa.me/5551997838841" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </li>
-                <li>
-                <a href="mailto:comercial@anchorstec.com.br" target="_blank"><i class="fa fa-envelope"></i></a>
-                </li>
-                <li>
-                <a href="https://www.google.com/maps/place/AnchorsTec+-+Cria%C3%A7%C3%A3o+de+sites+e+sistemas+web/@-30.0307695,-51.2255338,17z/data=!4m6!3m5!1s0x9519795639b047af:0xd8a855ed6ce8ad7a!8m2!3d-30.0307695!4d-51.2255338!16s%2Fg%2F11w3h85vbz?entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                </li>
-              </li>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Anchors<span>Tec</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Serviços</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
+                <li class="nav-item"><a href="#contact" class="btn">Fale Conosco</a></li>
             </ul>
-          </div>
         </div>
-        <div class="whatsapp-float">
-          <a href="https://wa.me/5551997838841" target="_blank">
-            <i
-              class="fab fa-whatsapp"
-              style="font-size: 50px; color: #25d366"
-            ></i>
-          </a>
-        </div>
+    </header>
 
-        <div class="row">
-          <div class="col-lg-12">
-            <p class="copyright">
-              Copyright &copy; 2024 - 2025 Anchorstec soluções em tecnologia.
-            </p>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transformação Digital para o Seu Negócio</h1>
+                <p>Soluções completas em Cloud, Infraestrutura e Tecnologia para otimizar processos e impulsionar resultados.</p>
+                <a href="#contact" class="btn">Solicite uma Proposta</a>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos soluções tecnológicas completas para atender às necessidades do seu negócio.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <p>Migração para nuvem, gerenciamento de ambientes em cloud e soluções híbridas para otimizar custos e escalar recursos conforme necessário.</p>
+                    <a href="#" class="btn">Saiba Mais</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                    </div>
+                    <h3>Infraestrutura de TI</h3>
+                    <p>Projeto, implementação e suporte de infraestrutura de TI completa, incluindo redes, servidores, armazenamento e backup para empresas de todos os portes.</p>
+                    <a href="#" class="btn">Saiba Mais</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3>Transformação Digital</h3>
+                    <p>Consultorias e implementação de projetos de transformação digital para modernizar processos e aumentar a eficiência operacional da sua empresa.</p>
+                    <a href="#" class="btn">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/images/favicon/android-chrome-512x512.png" alt="Equipe Anchors Tec">
+                </div>
+                <div class="about-text">
+                    <h2>Sobre a Anchors Tec</h2>
+                    <p>Somos uma empresa de tecnologia especializada em soluções de infraestrutura, cloud computing e transformação digital. Há mais de 10 anos no mercado, nos dedicamos a oferecer serviços de alta qualidade para empresas que buscam inovação e eficiência.</p>
+                    <p>Nossa equipe é composta por profissionais certificados e experientes, comprometidos em entregar resultados que impulsionam o crescimento dos nossos clientes.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Anos de Experiência</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Projetos Concluídos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Clientes Satisfeitos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Clientes</h2>
+                <p>Empresas que confiam em nossas soluções tecnológicas</p>
+            </div>
+            <div class="client-logos">
+                <div class="client-logo">
+                    <img src="/api/placeholder/130/60" alt="Cliente 1">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/130/60" alt="Cliente 2">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/130/60" alt="Cliente 3">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/130/60" alt="Cliente 4">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/130/60" alt="Cliente 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Estamos à disposição para atender às suas necessidades</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Informações de Contato</h2>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <h4>Endereço</h4>
+                            <p>Alameda dos Anapurus, 1516 - São Paulo, SP</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <h4>Telefone</h4>
+                            <p>+55 (11) 5055-3000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <h4>Email</h4>
+                            <p>contato@anchorstec.com.br</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" id="name" class="form-control" placeholder="Seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Seu email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Telefone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Seu telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea id="message" class="form-control" placeholder="Sua mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Anchors Tec</h3>
+                    <p>Soluções completas em tecnologia para empresas que buscam inovação, eficiência e resultados.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cloud Computing</a></li>
+                        <li><a href="#">Infraestrutura de TI</a></li>
+                        <li><a href="#">Transformação Digital</a></li>
+                        <li><a href="#">Consultoria em TI</a></li>
+                        <li><a href="#">Monitoramento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p>Alameda dos Anapurus, 1516</p>
+                    <p>São Paulo, SP</p>
+                    <p>+55 (11) 5055-3000</p>
+                    <p>contato@anchorstec.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anchors Tec. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script>
+        // Simple script for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-    <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script>
-
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
-  </body>
+        // Fixed header on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
 </html>
